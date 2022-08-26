@@ -151,7 +151,7 @@ h2 {
 .mq_1 .mqBar .content {
   font-size: 18px;
   margin: 0;
-  animation: mqH_ani 5s linear 0s infinite;
+  animation: mqH_ani 15s linear 0s infinite;
 }
 
 .mq_1 .deco2 {
@@ -230,7 +230,7 @@ h2 {
 .mq_2 .mqBar .textBox .content {
   font-size: 18px;
   margin: 0;
-  animation: mqH_ani 5s linear 0s infinite;
+  animation: mqH_ani 15s linear 0s infinite;
 }
 
 /* 跑馬燈(橫)3 */
@@ -297,7 +297,7 @@ h2 {
 .mq_3 .mqBar .content {
   font-size: 18px;
   margin: 0;
-  animation: mqH_ani 5s linear 0s infinite;
+  animation: mqH_ani 15s linear 0s infinite;
 }
 
 .mq_3 .deco2 {
@@ -428,7 +428,7 @@ h2 {
   padding: 0 11px;
   box-sizing: border-box;
   margin: 0;
-  animation: mqY_ani 5s linear 0s infinite;
+  animation: mqY_ani 15s linear 0s infinite;
 }
 
 .mqV_1 .mqBar .textBox .content span {
@@ -490,7 +490,7 @@ h2 {
   font-size: 18px;
   writing-mode: vertical-lr;
   margin: 0;
-  animation: mqY_ani 5s linear 0s infinite;
+  animation: mqY_ani 15s linear 0s infinite;
 }
 
 .mqV_2 .mqBar .textBox .content span {
@@ -622,7 +622,7 @@ h2 {
   font-size: 18px;
   writing-mode: vertical-lr;
   margin: 0 3px;
-  animation: mqY_ani 5s linear 0s infinite;
+  animation: mqY_ani 15s linear 0s infinite;
 }
 
 .mqV_3 .mqBar .textBox .content span {
@@ -680,7 +680,7 @@ h2 {
   font-size: 18px;
   writing-mode: vertical-lr;
   margin: 0;
-  animation: mqY_ani 5s linear 0s infinite;
+  animation: mqY_ani 15s linear 0s infinite;
 }
 
 .mqV_4 .mqBar .content span {
@@ -781,7 +781,7 @@ h2 {
   font-size: 18px;
   writing-mode: vertical-lr;
   margin: 0;
-  animation: mqY_ani 5s linear 0s infinite;
+  animation: mqY_ani 15s linear 0s infinite;
 }
 
 .mqV_5 .mqBar .textBox .content span {
