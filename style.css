@@ -2,13 +2,16 @@ html {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 ;
 }
 
 body {
   width: 100%;
-  height: auto;
+  min-width: 800px;
+  height: 100%;
   font-family: 微軟正黑體;
+  padding: 0 50px;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -17,7 +20,7 @@ h2 {
 }
 
 .wrap {
-  width: 1600px;
+  width: 100%;
   min-width: 800px;
   height: auto;
   margin: 50px auto;
@@ -53,14 +56,7 @@ h2 {
 .cardArea {
   width: 100%;
   height: auto;
-  margin-bottom: 100px;
-}
-
-.cardArea .lineBox {
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: space-around;
+  padding: 50px 0;
 }
 
 .rankArea {
@@ -78,26 +74,26 @@ h2 {
 }
 /* 跑馬燈(橫)-動畫 */
 @keyframes mqH_ani {
-  0% {
-    transform: translateX(0%);
-  }
   100% {
-    transform: translateX(150%);
+    transform: translateX(-100%);
+  }
+  0% {
+    transform: translateX(100%);
   }
 }
 /* 跑馬燈(直)-動畫 */
 @keyframes mqY_ani {
-  0% {
-    transform: translateY(0%);
-  }
   100% {
+    transform: translateY(-180%);
+  }
+  0% {
     transform: translateY(180%);
   }
 }
 
 /* 跑馬燈1(橫) */
 .mq_1 {
-  width: 100%;
+  width: 95%;
   height: 53px;
   display: flex;
   margin-bottom: 70px;
@@ -129,7 +125,7 @@ h2 {
 }
 
 .mq_1 .mqBar {
-  width: 1176px;
+  width: 100%;
   height: 52px;
   background: #ffff;
   border: 2px solid #af20e4;
@@ -164,7 +160,7 @@ h2 {
   background: url(./img/mq1_deco.png) no-repeat;
   position: absolute;
   top: -6px;
-  left: 1133px;
+  right: -3px;
   z-index: 1;
 }
 
@@ -667,11 +663,20 @@ h2 {
   clip-path: polygon(80% 0, 100% 2%, 100% 100%, 20% 100%, 0 98%, 0% 0%);
   padding: 0 13px;
   box-sizing: border-box;
-  overflow: hidden;
   position: relative;
 }
 
-.mqV_4 .mqBar .content {
+.mqV_4 .mqBar .textBox {
+  width: 48px;
+  height: 645px;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 14px;
+}
+
+.mqV_4 .mqBar .textBox .content {
   font-size: 18px;
   writing-mode: vertical-lr;
   margin: 0;
@@ -788,11 +793,14 @@ h2 {
 
 /* (3)卡片 */
 .cardArea .outer {
-  width: 600px;
-  height: 600px;
+  width: 100%;
+  height: auto;
   display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  justify-content: space-between;
+  grid-auto-rows: 200px;
   gap: 23px;
-  grid-template-columns: 200px 200px 200px;
+  margin-bottom: 100px;
 }
 
 .outer .cardBox {
@@ -855,11 +863,14 @@ h2 {
 
 /* (3)卡片-2 */
 .cardArea .outer2 {
-  width: 600px;
-  height: 600px;
+  width: 100%;
+  height: auto;
   display: grid;
-  gap: 42px 32px;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-columns: repeat(auto-fill, 200px);
+  justify-content: space-between;
+  grid-auto-rows: 200px;
+  gap: 23px;
+  margin-bottom: 100px;
 }
 
 .cardArea .outer2 .cardBox {
@@ -1020,7 +1031,6 @@ h2 {
 .rankBlock1 .line .country {
   font-size: 18px;
   color: #000;
-  font-family: "微軟正黑體";
   font-weight: bolder;
   margin-left: 93px;
 }
@@ -1060,6 +1070,7 @@ h2 {
 .rankArea .rankBlock2 .rankLine {
   width: 100%;
   height: auto;
+  display: flex;
   position: relative;
 }
 
@@ -1079,20 +1090,44 @@ h2 {
 }
 
 .rankArea .rankBlock2 .rankLine .line {
-  width: 845px;
+  width: 100%;
   height: 60px;
   background: #ffd060;
-  clip-path: polygon(100% 0%, 96.5% 50%, 100% 100%, 0 100%, 3.5% 50%, 0 0);
   display: flex;
   justify-content: space-between;
-  margin: 16px 0 0 64px;
+  margin: 0 0 16px 97px;
   position: relative;
+}
+
+.rankArea .rankBlock2 .rankLine .line::before {
+  content: " ";
+  width: 0;
+  height: 0;
+  border: 30px solid #ffd060;
+  border-right: 30px solid #ffd060;
+  border-bottom-color: #ffd060;
+  border-left-color: transparent;
+  position: absolute;
+  top: 0;
+  left: -29px;
+}
+
+.rankArea .rankBlock2 .rankLine .line::after {
+  content: " ";
+  width: 0;
+  height: 0;
+  border: 30px solid #ffd060;
+  border-left: 30px solid #ffd060;
+  border-bottom-color: #ffd060;
+  border-right-color: transparent;
+  position: absolute;
+  top: 0;
+  right: -35px;
 }
 
 .rankArea .rankBlock2 .rankLine .line .country {
   font-size: 18px;
   color: #000;
-  font-family: "微軟正黑體";
   font-weight: bolder;
   margin-left: 55px;
 }
@@ -1108,12 +1143,10 @@ h2 {
   width: 174px;
   height: 60px;
   background: linear-gradient(to right, #ff7022 0%, #ffc451 100%);
-  clip-path: polygon(80% 0, 100% 100%, 16% 100%, 0 50%, 16% 0);
+  clip-path: polygon(80% 0, 100% 100%, 20% 100%, 0 50%, 20% 0);
   padding: 5px 29px;
   box-sizing: border-box;
-  position: absolute;
-  bottom: 0;
-  right: 532px;
+  margin: 0 21px;
 }
 
 .rankArea .rankBlock2 .rankLine .deco2 .point {
@@ -1131,7 +1164,7 @@ h2 {
 
 /*(5)標準 (皇冠)*/
 .rank_crownArea .rankBlock .line {
-  width: 1050px;
+  width: 100%;
   height: 63px;
   background: linear-gradient(to top, #0c125b 0%, #172979 75%);
   display: flex;
@@ -1155,7 +1188,7 @@ h2 {
 .rank_crownArea .rankBlock .line .ic.one {
   background-position-x: 0%;
 }
-.rank_crownArea .rankBlock .line .ic.one::before {
+.rank_crownArea .rankBlock3 .line .ic.one::before {
   content: "";
   width: 23px;
   height: 23px;
@@ -1164,16 +1197,6 @@ h2 {
   position: absolute;
   top: -11.5px;
   left: -20px;
-}
-.rank_crownArea .rankBlock .line .ic.one::after {
-  content: "";
-  width: 23px;
-  height: 23px;
-  background: linear-gradient(45deg, #ffcf5d 39%, #d28b1b 61%, #ffcf5d 77%);
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
-  position: absolute;
-  bottom: -12.5px;
-  left: 1008px;
 }
 
 .rank_crownArea .rankBlock .line .ic.two {
@@ -1190,16 +1213,7 @@ h2 {
   top: -11.5px;
   left: -20px;
 }
-.rank_crownArea .rankBlock .line .ic.two::after {
-  content: "";
-  width: 23px;
-  height: 23px;
-  background: linear-gradient(45deg, #d7d7d7 35%, #6f6f6f 57%, #d7d7d7 76%);
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
-  position: absolute;
-  bottom: -12.5px;
-  left: 1008px;
-}
+
 .rank_crownArea .rankBlock .line .ic.three {
   background-position-x: 103%;
 }
@@ -1214,16 +1228,6 @@ h2 {
   top: -11.5px;
   left: -20px;
 }
-.rank_crownArea .rankBlock .line .ic.three::after {
-  content: "";
-  width: 23px;
-  height: 23px;
-  background: linear-gradient(45deg, #d7997a 35%, #a55832 60%, #d7997a 76%);
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
-  position: absolute;
-  bottom: -12.5px;
-  left: 1008px;
-}
 
 .rank_crownArea .rankBlock .line .num {
   color: #fff;
@@ -1235,37 +1239,69 @@ h2 {
   left: 38px;
 }
 
-.rank_crownArea .line .country {
+.rank_crownArea .rankBlock .line .country {
   width: 100%;
   height: auto;
   font-size: 20px;
   color: #ffff;
-  font-family: "微軟正黑體";
   font-weight: bolder;
   margin: 0 0 0 93px;
 }
 
-.rank_crownArea .line .country .en {
+.rank_crownArea .rankBlock .line .country .en {
   font-size: 16px;
   color: #ffff;
   font-weight: bolder;
   margin-left: 10px;
 }
 
-.rank_crownArea .line .rank {
+.rank_crownArea .rankBlock .line .rank {
   width: 350px;
   height: 30px;
   display: flex;
 }
 
-.rank_crownArea .line .rank .point {
+.rank_crownArea .rankBlock .line .rank.one::after {
+  content: "";
+  width: 23px;
+  height: 23px;
+  background: linear-gradient(45deg, #ffcf5d 39%, #d28b1b 61%, #ffcf5d 77%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  position: absolute;
+  bottom: -0.2px;
+  right: 0;
+}
+
+.rank_crownArea .rankBlock .line .rank.two::after {
+  content: "";
+  width: 23px;
+  height: 23px;
+  background: linear-gradient(45deg, #d7d7d7 35%, #6f6f6f 57%, #d7d7d7 76%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  position: absolute;
+  bottom: -0.2px;
+  right: 0;
+}
+
+.rank_crownArea .rankBlock .line .rank.three::after {
+  content: "";
+  width: 23px;
+  height: 23px;
+  background: linear-gradient(45deg, #d7997a 35%, #a55832 60%, #d7997a 76%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  position: absolute;
+  bottom: -0.2px;
+  right: 0;
+}
+
+.rank_crownArea .rankBlock  .line .rank .point {
   font-size: 25px;
   font-weight: bold;
   color: #17fcbe;
   margin: 0;
 }
 
-.rank_crownArea .line .rank .point .lastRecord {
+.rank_crownArea .rankBlock  .line .rank .point .lastRecord {
   font-size: 16px;
   color: #ffff;
   margin: 0 0 10px 24px;
@@ -1273,9 +1309,8 @@ h2 {
 
 /*(6)標準 (獎牌)*/
 .rank_medalArea .rankBlock .lineBlock {
-  width: 1020px;
+  width: 97%;
   height: 107px;
-  margin-bottom: 16px;
   position: relative;
 }
 
@@ -1316,11 +1351,10 @@ h2 {
 }
 
 .rank_medalArea .rankBlock .lineBlock .line {
-  width: 1020px;
+  width: 98%;
   height: 63px;
   background: linear-gradient(to right, #f2f2f2 0%, #f9f9f9 100%);
-  clip-path: polygon(1.5% 15%, 1.5% 85%, 0 100%, 100% 100%, 100% 0, 0 0);
-  box-shadow: inset 2px 2px 2px 4px rgba(77, 77, 77, 3.5%);
+  box-shadow: inset 2px 2px 2px -4px rgba(77, 77, 77, 3.5%);
   border-radius: 0 10px 10px 0;
   display: flex;
   padding: 5px 10px;
@@ -1328,57 +1362,86 @@ h2 {
   justify-content: space-between;
   position: absolute;
   top: 21px;
-  left: 67px;
+  left: 88px;
+}
+.rank_medalArea .rankBlock .lineBlock .line::before {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 26px 19px 0 ;
+  border-color: transparent #f2f2f2  transparent transparent;
+  position: absolute;
+  top: 0;
+  left: -13px;
+}
+.rank_medalArea .rankBlock .lineBlock .line::after {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 19px 26px;
+  border-color: transparent transparent #f2f2f2 transparent;
+  position: absolute;
+  bottom: 0;
+  left: -13px;
 }
 
 .rank_medalArea .rankBlock .lineBlock .line.one {
   background: linear-gradient(to right, #ffbb38 0%, #ffd648 53%, #ffef82 100%);
+  position: relative;
+}
+.rank_medalArea .rankBlock .lineBlock .line.one::before {
+  border-color: transparent #ffbb38  transparent transparent;
+}
+.rank_medalArea .rankBlock .lineBlock .line.one::after {
+  border-color: transparent transparent #ffbb38 transparent;
 }
 .rank_medalArea .rankBlock .lineBlock .line.two {
   background: linear-gradient(to right, #c3c9d2 0%, #dde2eb 70%);
+  position: relative;
+}
+.rank_medalArea .rankBlock .lineBlock .line.two::before {
+  border-color: transparent #c3c9d2  transparent transparent;
+}
+.rank_medalArea .rankBlock .lineBlock .line.two::after {
+  border-color: transparent transparent #c3c9d2 transparent;
 }
 .rank_medalArea .rankBlock .lineBlock .line.three {
   background: linear-gradient(to right, #ec9f67 0%, #eaa06a 53%, #f9ceae 100%);
 }
-
-.rank_medalArea .rankBlock .lineBlock .num::before {
-  content: "";
-  width: 50px;
-  height: 60px;
-  background: #f9f9f9;
-  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  box-shadow: inset 2px 2px 2px 4px rgba(77, 77, 77, 5%);
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: -1;
+.rank_medalArea .rankBlock .lineBlock .line.three::before {
+  border-color: transparent #ec9f67  transparent transparent;
+}
+.rank_medalArea .rankBlock .lineBlock .line.three::after {
+  border-color: transparent transparent #ec9f67 transparent;
 }
 
-.rank_medalArea .lineBlock .country {
+
+.rank_medalArea .rankBlock .lineBlock .country {
   font-size: 20px;
   color: #000;
-  font-family: "微軟正黑體";
   font-weight: bolder;
-  margin: 14px 50px;
+  margin: 14px 23px;
 }
 
-.rank_medalArea .lineBlock .country .en {
+.rank_medalArea .rankBlock .lineBlock .country .en {
   font-size: 16px;
   color: #028f2b;
   font-weight: bolder;
   margin-left: 10px;
 }
 
-.rank_medalArea .lineBlock .country .en.gray {
+.rank_medalArea .rankBlock .lineBlock .country .en.gray {
   color: #5a5a5a;
 }
 
-.rank_medalArea .lineBlock .rank {
+.rank_medalArea .rankBlock .lineBlock .rank {
   width: 104px;
   height: 40px;
 }
 
-.rank_medalArea .lineBlock .rank .point {
+.rank_medalArea .rankBlock .lineBlock .rank .point {
   font-size: 22px;
   color: #f20a0a;
   font-weight: bold;
@@ -1386,7 +1449,7 @@ h2 {
   text-align: end;
 }
 
-.rank_medalArea .lineBlock .rank .lastRecord {
+.rank_medalArea .rankBlock .lineBlock .rank .lastRecord {
   font-size: 15px;
   color: #646464;
   font-weight: bold;
