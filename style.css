@@ -235,7 +235,7 @@ h2 {
 
 /* 跑馬燈(橫)3 */
 .mq_3 {
-  width: 100%;
+  width: 90%;
   height: 45px;
   display: flex;
   margin-left: 53px;
@@ -283,12 +283,12 @@ h2 {
 }
 
 .mq_3 .mqBar {
-  width: 1167px;
+  width: 100%;
   height: 47px;
   background: #f1f1f1;
   padding: 10px 0;
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 0 0 -10px;
   overflow: hidden;
   position: relative;
   z-index: -1;
